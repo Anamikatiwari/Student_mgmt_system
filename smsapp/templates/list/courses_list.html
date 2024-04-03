@@ -1,0 +1,6 @@
+{% for course in  courses %}
+
+<a href={% url "student_detail" course.id %}>{{course}}</a>
+{{course.name}}
+{{course.shift}}
+{% endfor %}
