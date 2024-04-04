@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    <body>
+
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            
+                <div class="form=group">
+                    <label for="name">Name:</label>
+                    {{ form.name }}
+                </div>
+                <br/>
+
+                <div class="form=group">
+                    <label for="contact">Contact:</label>
+                    {{ form.contact }}
+                </div>
+                <br/>
+
+                <div class="form=group">
+                    <label for="address">Address:</label>
+                    {{ form.address }}
+                </div>
+                <br/>
+
+                <div class="form=group">
+                    <label for="college">College:</label>
+                    {{ form.college }}
+                </div>
+                <br/>
+
+                <div class="form=group">
+                    <label for="course">Course:</label>
+                    {{ form.course }}
+                </div>
+                <br/>
+
+                <div class="form=group">
+                    <label for="image">Image:</label>
+                    {{ form.image }}
+
+                    {% if form.instance.image %}
+                    <img src="{{ student.image.url }}" alt="Student Image"/><br/>
+                {% endif %}
+
+                </div>
+                <br/>
+                <input type="submit">
+            </form>
+
+        </div>
+    </body>
+</html>

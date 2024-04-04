@@ -24,8 +24,9 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     contact = models.IntegerField()
     address = models.CharField(max_length=200)
-    college = models.ForeignKey(College, on_delete=models.CASCADE, related_name='student')
+    college  = models.ForeignKey(College, on_delete=models.CASCADE, related_name='student')
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='student')
+    image = models.ImageField(upload_to="images/", blank=True, null= True)
 
     def __str__(self):
         return self.name

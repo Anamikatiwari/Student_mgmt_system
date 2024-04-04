@@ -1,6 +1,8 @@
 {% for course in  courses %}
 
 <a href={% url "student_detail" course.id %}>{{course}}</a>
-{{course.name}}
-{{course.shift}}
+{% comment %} {{course.name}} {% endcomment %}
+{% comment %} {{course.shift}} {% endcomment %}
+{% empty %}
+No Courses Found
 {% endfor %}
